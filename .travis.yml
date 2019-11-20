@@ -1,0 +1,15 @@
+sudo: required
+matrix:
+  fast_finish: true
+services:
+- docker
+script:
+- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+- chmod 755 ~/.docker
+- chmod 644 ~/.docker/config.json
+- ./build.sh
+
+env:
+  global:
+    - DOCKER_USERNAME: angrygoat
+    - secure: "k01P1o6jOKwJm9ip+6zGZtWa++Wi3B+UDM3iQa9SAJEqwBvzTuNqWcOGfh9hgy7t6D3IkocwDve1UIzIjXvP+KMqm+DZ7hFiKiK/hZS2urQdDzGMeuzTM8v3yIkjOZ6Tymi6SYLzvL4/1uYHov1O+ZUaBLvvfSYIHZSkZbdv6rtB8PJWprlSW9Hgf9wBj10O3EDUz3QStgsiVkS9kBQPRXlsQAUc/Q1mectiI44N/E4qhzsT4P1fhlMX3FEoAtVgkcB6YtCBRVRoGYwmFdp9a+ZQRGyvaCW7X8oGe05iAAwF1T6Tg3ztHhPFWnbFWogRjlhD8OVajluW65Bt4TcW/30m5kFZ70Kaywin1T7cqMfu34dBEh/sWlz6TII0h1SHXqFn2dxHugTWmLzjEzoPfO+ym5ceBoqCgGcePljdnZOUsZQ5C2JpcatlZD+oNm2oT14vGRVgXOMHQwh3/mhfCxHDaAP1ulBtkGIpapu0CD23qZEVqzpEaPqTrb14GTEEdOSA0rR1TDn8NzSxl+jPwYorQ4m1BsWmGLDzOnPPm5KcZMnlGb2JUZfDVlUYHQq591RQymPFL0kDkmbvY9Tamd4yljI+q5n8+jWOX0c6RbSTIg9m5Jgct54qxlUVbNr7eljHtMFO+/QQ1cjcV9TdKK/Yv+1IyqCr1/SRj2Y1wuE="
