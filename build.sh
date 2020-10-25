@@ -2,5 +2,5 @@
 
 set -e
 
-docker build -t ealgis/postgis .
+docker build --pull -t ealgis/postgis .
 docker push ealgis/postgis
