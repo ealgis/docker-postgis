@@ -1,4 +1,4 @@
-FROM postgres:12
+FROM postgres:13
 MAINTAINER Mike Dillon <mike@appropriate.io>
 
 ENV POSTGIS_MAJOR 3
